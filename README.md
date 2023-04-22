@@ -83,4 +83,6 @@ cron job anyone
 
 ### Configuring devices
 
+### Bypass pi-hole by MAC address
+
 ### Setting up router
