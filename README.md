@@ -81,34 +81,7 @@ Change the following in the file.
 - [pihole-command](https://docs.pi-hole.net/core/pihole-command/)
 - [pi-hole-quick-reference-commands](https://kb.adamsdesk.com/application/pi-hole-quick-reference-commands/)
 
-## updating the pi and pi-hole
-You will need to update the pi from time to time.
-
-1. to update pi-hole run.
- ```bash
-  # answer any prompts
-  pihole -up
- ```
-This update the packages that are used by pi.
-- Note: I usually do this when the web admin tool says I am out of date.
-
-
-2. To update all the Raspberry Pi install packages
- ```bash
-  # answer any prompts
-  sudo apt update
-  sudo apt full-upgrade
-  sudo reboot
- ```
-- Note usually run this when there is a security patch for the os.
-
-If you run into issues with above that the file is locked run the following.
- ```bash
-   sudo touch /forcefsck
-   subo reboot
- ```
-
-## Making the ip addresses on web admin tool resolve to names.
+## Making your networks ip addresses on web admin tool resolve to names.
 For my setup I am just running the pi-hold as a DNS service not a DHCP service. This is because my consumer level TP-Link network/WI-FI has to do DHCP.
 
 This results in the web admin listing out IP's for all the hosts. Which I would rather have names of the host. To get around this I do the following.
@@ -130,15 +103,8 @@ ff02::2		ip6-allrouters
 192.168.68.100  Hounds-computer
 ```
 
-## Auto updates of gravity lists
-pi-hole updates gravity, once a week.
-
-Pi-hole uses a cron job to update gravity (/etc/cron.d/pihole).
-
-The time for this job is set on installation, but you can change when the job runs to meet your own requirements.
-
 ## Bypass pi-hole by MAC address
-The pi-hole web admin interface has a lot of options like bi-passing filtering for a mac address.
+The pi-hole web admin interface has a lot of options like bypassing filtering for a mac address.
 
 ## Setting up router to block adds for all devices
 I am running TP-Link Deco M5. I have them configured to only do IPv4 routing. 
@@ -148,3 +114,37 @@ See the following for changing the DNS server to the pi-hole ip address
 - [How to change DNS server settings on my Deco](https://www.tp-link.com/us/support/faq/1855/)
 
 Note: I set the primary and secondary address both to the IP of the pi-hole.
+
+## Auto updates of gravity lists
+pi-hole updates gravity, once a week.
+
+Pi-hole uses a cron job to update gravity (/etc/cron.d/pihole).
+
+The time for this job is set on installation, but you can change when the job runs to meet your own requirements.
+
+## manually updating the pi and pi-hole
+You might want to manually update the pi and pi-hole from time to time.
+
+1. to update pi-hole run.
+ ```bash
+  # answer any prompts
+  pihole -up
+ ```
+This updates the packages that are used by pi.
+- Note: I usually do this when the web admin tool says I am out of date.
+
+
+2. To update all the Raspberry Pi install packages
+ ```bash
+  # answer any prompts
+  sudo apt update
+  sudo apt full-upgrade
+  sudo reboot
+ ```
+- Note usually run this when there is a security patch for the os.
+
+If you run into issues with above that the file is locked run the following.
+ ```bash
+   sudo touch /forcefsck
+   subo reboot
+ ```
