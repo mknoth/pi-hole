@@ -38,7 +38,19 @@ The following sections cover the setup that I did for the Pi and Pi-hole
 7. Connect to either NET
 8. Power on the Pi
    - note it may take initially 3 minutes for this. Connect a monitor to see what the pi is doing.
-``
+
+### disable wifi on pi
+If you need to disable wifi on the pi. And will have it hard plugged in. Raspbian is managing hardware with overlays. In `/boot/overlays/README` you will find:
+
+Add the following 
+
+`dtoverlay=pi3-disable-wifi`
+
+to `/boot/config.txt` to disable wifi. and reboot the pi.
+
+I have tested it with a Raspberry 4. When disabled you will not get a WiFi interface wlan0 which you can check with 
+`ip -br addr`
+
 ### Install pi-hole
 - [Pi-hole](https://pi-hole.net/)
 - [Pi-hole documentation](https://docs.pi-hole.net/)
