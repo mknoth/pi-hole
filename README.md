@@ -130,8 +130,12 @@ ff02::2		ip6-allrouters
 192.168.68.100  Hounds-computer
 ```
 
-## Configuring Pi to auto update
-cron job anyone
+## Auto updates of gravity lists
+pi-hole updates gravity, once a week.
+
+Pi-hole uses a cron job to update gravity (/etc/cron.d/pihole).
+
+The time for this job is set on installation, but you can change when the job runs to meet your own requirements.
 
 ## Bypass pi-hole by MAC address
 The pi-hole web admin interface has a lot of options like bi-passing filtering for a mac address.
@@ -139,7 +143,8 @@ The pi-hole web admin interface has a lot of options like bi-passing filtering f
 ## Setting up router to block adds for all devices
 I am running TP-Link Deco M5. I have them configured to only do IPv4 routing. 
 
-See the following for change the DNS server to the pi-hole ip address
--[How to change DNS server settings on my Deco](https://www.tp-link.com/us/support/faq/1855/)
+See the following for changing the DNS server to the pi-hole ip address
+
+- [How to change DNS server settings on my Deco](https://www.tp-link.com/us/support/faq/1855/)
 
 Note: I set the primary and secondary address both to the IP of the pi-hole.
